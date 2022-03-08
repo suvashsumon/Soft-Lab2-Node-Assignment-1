@@ -24,5 +24,19 @@ leaderRouter.route('/')
 .delete((req, res, next) => {
     res.end('Deleting all leaders');
 });
+
+leaderRouter.route('/:leaderId')
+.get((req,res,next) => {
+    res.end("Showing the leader no. "+req.params.leaderId);
+})
+.post((req,res,next) => {
+    res.end("Saving the leader no. "+req.params.leaderId);
+})
+.put((req,res,next) => {
+    res.end("PUT request does not work for the leader no. "+req.params.leaderId);
+})
+.delete((req,res,next) => {
+    res.end("Deleting the leader no. "+req.params.leaderId);
+});
  
 module.exports = leaderRouter;
